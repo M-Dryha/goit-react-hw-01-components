@@ -2,10 +2,11 @@ import styled from '@emotion/styled';
 
 export const ProfileBox = styled.div`
 
-margin: 0 auto;
+margin: 35px auto;
 width: 350px;
 border: 1px solid #696969;
  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+ background-color: #ffe9f4;
 `
 
 export const Description = styled.div`
