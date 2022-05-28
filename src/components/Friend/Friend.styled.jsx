@@ -32,7 +32,7 @@ height: 15px;
 margin-right: 30px;
 border-radius: 50%;
 border: 1px solid #696969;
-background-color: ${props => props.type ? 'green' : 'red' };
+background-color: ${props => props.typeName ? 'green' : 'red' };
     `
 
 export const Image = styled.img`
