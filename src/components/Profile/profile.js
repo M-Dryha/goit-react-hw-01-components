@@ -12,6 +12,7 @@ import {
 } from './Profile.styled';
 
 const Profile = ({ username, tag, location, avatar, stats }) => {
+  const { followers, views, likes } = stats;
   return (
     <ProfileBox>
       <Description>
@@ -24,15 +25,15 @@ const Profile = ({ username, tag, location, avatar, stats }) => {
       <StatsList>
         <StatsItem>
           <Label>Followers</Label>
-          <Quantity>{stats.followers}</Quantity>
+          <Quantity>{followers}</Quantity>
         </StatsItem>
         <StatsItem>
           <Label>Views</Label>
-          <Quantity>{stats.views}</Quantity>
+          <Quantity>{views}</Quantity>
         </StatsItem>
         <StatsItem>
           <Label>Likes</Label>
-          <Quantity>{stats.likes}</Quantity>
+          <Quantity>{likes}</Quantity>
         </StatsItem>
       </StatsList>
     </ProfileBox>
@@ -40,11 +41,12 @@ const Profile = ({ username, tag, location, avatar, stats }) => {
 };
 
 Profile.propTypes = {
-  username: PropTypes.string,
-  tag: PropTypes.string,
-  location: PropTypes.string,
-  avatar: PropTypes.string,
-  stats: PropTypes.object,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+
+  stats: PropTypes.objectOf(PropTypes.number).isRequired,
 };
 
 export default Profile;
